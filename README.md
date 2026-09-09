@@ -32,9 +32,9 @@ $$
 The number of physical optical modes and independent conjugate SPDC pairs are
 
 $$
-N_{\\mathrm{mode}}=2+4N_k,
+N_{\\mathrm{mode}}=2+4N_{k},
 \\qquad
-M=1+2N_k.
+M=1+2N_{k}.
 $$
 
 Here $N_k$ is the integer sideband-pair count of the discrete digital-twin Hamiltonian. It is **not** the spectral Schmidt number. Noninteger $N_k$ values appear only as interpolation coordinates in the analytical ternary visualizations.
