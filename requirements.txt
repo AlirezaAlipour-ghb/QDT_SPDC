@@ -1,0 +1,14 @@
+numpy
+scipy
+pandas
+sympy
+matplotlib
+qutip
+qutip-qip
+joblib
+pathos
+rich
+ipywidgets
+mpltern
+numdifftools
+jupyterlab
