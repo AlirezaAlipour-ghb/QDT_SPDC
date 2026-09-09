@@ -52,16 +52,16 @@ $$
 Each optical mode is coupled to an independent thermal environment through a virtual beam splitter,
 
 $$
-\hat a_{\mathrm{out}}
+\\hat a_{\\mathrm{out}}
 =
-\sqrt{T}\,\hat a_{\mathrm{in}}
+\\sqrt{T}\,\\hat a_{\\mathrm{in}}
 +
-\sqrt{1-T}\,\hat e,
-\qquad
-\langle \hat e^\dagger \hat e\rangle=\bar n_{\mathrm{th}},
+\\sqrt{1-T}\,\\hat e,
+\\qquad
+\\langle \\hat e^\\dagger \\hat e\\rangle=\\bar n_{\\mathrm{th}},
 $$
 
-where $T$ is the channel transmissivity and $\bar n_{\mathrm{th}}$ is the mean thermal occupation.
+where $T$ is the channel transmissivity and $\\bar n_{\mathrm{th}}$ is the mean thermal occupation.
 
 For one SPDC pair, define
 
