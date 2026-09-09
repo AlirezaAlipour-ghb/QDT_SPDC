@@ -32,19 +32,19 @@ $$
 The number of physical optical modes and independent conjugate SPDC pairs are
 
 $$
-N_{\mathrm{mode}}=2+4N_k,
-\qquad
+N_{\\mathrm{mode}}=2+4N_k,
+\\qquad
 M=1+2N_k.
 $$
 
 Here $N_k$ is the integer sideband-pair count of the discrete digital-twin Hamiltonian. It is **not** the spectral Schmidt number. Noninteger $N_k$ values appear only as interpolation coordinates in the analytical ternary visualizations.
 
-For equal pair gain $g$, each conjugate pair is a two-mode squeezed-vacuum (TMSV) state with
+For equal pair gain $g$, each conjugate pair is a two-mode squeezed vacuum (TMSV) state with
 
 $$
-P_n=\operatorname{sech}^2(g)\tanh^{2n}(g),
-\qquad
-\bar n_0=\sinh^2(g).
+P_n=\\operatorname{sech}^2(g)\\tanh^{2n}(g),
+\\qquad
+\\bar n_0=\\sinh^2(g).
 $$
 
 ### Thermal-loss channel
