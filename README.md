@@ -14,7 +14,7 @@ The code supports two complementary benchmark configurations:
 1. **State-level benchmark:** identical thermal-loss channels act directly on the SPDC modes, and the resulting state is evaluated using global purity and squared Uhlmann–Jozsa fidelity.
 2. **Measurement-level benchmark:** the SPDC state is first transformed by a lossless nonpolarizing beam splitter (NPBS); independent thermal-loss channels then act on the idler and signal output arms before polarization-resolved singles, coincidences, visibility, and conditional CHSH quantities are evaluated.
 
-The numerical model is implemented with **QuTiP** and finite local Fock dimension $d$. Analytical Gaussian formulas provide an infinite-dimensional reference and extend the model to multimode regimes that become impractical for direct density-matrix propagation.
+The numerical model is implemented with **QuTiP** and finite local Fock dimension $`d`$. Analytical Gaussian formulas provide an infinite-dimensional reference and extend the model to multimode regimes that become impractical for direct density-matrix propagation.
 
 ## Physical model
 
@@ -22,72 +22,72 @@ The numerical model is implemented with **QuTiP** and finite local Fock dimensio
 
 The discrete SPDC basis is
 
-$$
+```math
 (H,f_0),(V,f_0),
-\\left\\{
+\left\{
 (H,f_k^+),(V,f_k^-),(H,f_k^-),(V,f_k^+)
-\\right\\}_{k=1}^{N_k}.
-$$
+\right\}_{k=1}^{N_k}.
+```
 
 The number of physical optical modes and independent conjugate SPDC pairs are
 
-$$
+```math
 N_{\mathrm{mode}}=2+4N_k,
 \qquad
 M=1+2N_k.
-$$
+```
 
-Here $N_k$ is the integer sideband-pair count of the discrete digital-twin Hamiltonian. It is **not** the spectral Schmidt number. Noninteger $N_k$ values appear only as interpolation coordinates in the analytical ternary visualizations.
+Here $`N_k`$ is the integer sideband-pair count of the discrete digital-twin Hamiltonian. It is **not** the spectral Schmidt number. Noninteger $`N_k`$ values appear only as interpolation coordinates in the analytical ternary visualizations.
 
-For equal pair gain $g$, each conjugate pair is a two-mode squeezed vacuum (TMSV) state with
+For equal pair gain $`g`$, each conjugate pair is a two-mode squeezed-vacuum (TMSV) state with
 
-$$
-P_n=\\operatorname{sech}^2(g)\\tanh^{2n}(g),
-\\qquad
-\\bar n_0=\\sinh^2(g).
-$$
+```math
+P_n=\mathrm{sech}^2(g)\tanh^{2n}(g),
+\qquad
+\bar n_0=\sinh^2(g).
+```
 
 ### Thermal-loss channel
 
 Each optical mode is coupled to an independent thermal environment through a virtual beam splitter,
 
-$$
-\\hat a_{\\mathrm{out}}
+```math
+\hat a_{\mathrm{out}}
 =
-\\sqrt{T}\,\\hat a_{\\mathrm{in}}
+\sqrt{T}\,\hat a_{\mathrm{in}}
 +
-\\sqrt{1-T}\,\\hat e,
-\\qquad
-\\langle \\hat e^\\dagger \\hat e\\rangle=\\bar n_{\\mathrm{th}},
-$$
+\sqrt{1-T}\,\hat e,
+\qquad
+\langle \hat e^\dagger \hat e\rangle=\bar n_{\mathrm{th}},
+```
 
-where $T$ is the channel transmissivity and $\\bar n_{\mathrm{th}}$ is the mean thermal occupation.
+where $`T`$ is the channel transmissivity and $`\bar n_{\mathrm{th}}`$ is the mean thermal occupation.
 
 For one SPDC pair, define
 
-$$
+```math
 A=T\cosh(2g)+(1-T)(2\bar n_{\mathrm{th}}+1),
 \qquad
 C=T\sinh(2g).
-$$
+```
 
 The exact Gaussian pair purity and squared target-state fidelity are
 
-$$
+```math
 \mathcal P_{\mathrm{pair}}=\frac{1}{A^2-C^2},
-$$
+```
 
-$$
+```math
 \mathcal F_{\mathrm{pair}}
 =
 \frac{4}{
 [\cosh(2g)+A]^2-[\sinh(2g)+C]^2
 }.
-$$
+```
 
-For $M=1+2N_k$ identical independent pairs,
+For $`M=1+2N_k`$ identical independent pairs,
 
-$$
+```math
 \mathcal P_{N_k}
 =
 \mathcal P_{\mathrm{pair}}^{\,M},
@@ -95,7 +95,7 @@ $$
 \mathcal F_{N_k}
 =
 \mathcal F_{\mathrm{pair}}^{\,M}.
-$$
+```
 
 These expressions contain no finite-Fock cutoff.
 
@@ -103,37 +103,37 @@ These expressions contain no finite-Fock cutoff.
 
 For the post-NPBS measurement branch,
 
-$$
+```math
 \bar n_0=\sinh^2 g,
 \qquad
 b=(1-T)\bar n_{\mathrm{th}},
-$$
+```
 
-$$
+```math
 Q=T^2\eta(1-\eta)\bar n_0,
 \qquad
 B_{\mathrm{th}}=M^2b(T\bar n_0+b),
-$$
+```
 
-where $\eta$ is the NPBS transmissivity.
+where $`\eta`$ is the NPBS transmissivity.
 
 The same- and cross-polarization coincidence moments are
 
-$$
+```math
 C_{\mathrm{same}}
 =
 B_{\mathrm{th}}+MQ\sin^2(\alpha-\beta),
-$$
+```
 
-$$
+```math
 C_{\mathrm{cross}}
 =
 B_{\mathrm{th}}+MQ\cos^2(\alpha-\beta).
-$$
+```
 
 The reduced-model visibility and conditional CHSH quantity are
 
-$$
+```math
 V_{\mathrm{pol}}
 =
 \frac{MQ}{MQ+2B_{\mathrm{th}}},
@@ -141,35 +141,35 @@ V_{\mathrm{pol}}
 S_{\mathrm{CHSH}}^{(1)}
 =
 2\sqrt 2\,V_{\mathrm{pol}}.
-$$
+```
 
 The density-matrix calculation instead evaluates the Horodecki maximum
 
-$$
+```math
 S_{\max}=2\sqrt{u_1+u_2},
-$$
+```
 
-using the two largest eigenvalues of the conditioned polarization correlation tensor $\Gamma^{T}\Gamma$. This CHSH quantity is evaluated after one-photon-per-arm conditioning and should not be interpreted as a loophole-free Bell-test statistic without an explicit detector-efficiency and postselection model.
+using the two largest eigenvalues of the conditioned polarization correlation tensor $`\Gamma^{T}\Gamma`$. This CHSH quantity is evaluated after one-photon-per-arm conditioning and should not be interpreted as a loophole-free Bell-test statistic without an explicit detector-efficiency and postselection model.
 
 ## Numerical truncation and convergence
 
 Each bosonic mode is represented in the local Fock basis
 
-$$
+```math
 \mathcal H_d=\mathrm{span}\{|0\rangle,\ldots,|d-1\rangle\}.
-$$
+```
 
 Before the NPBS,
 
-$$
+```math
 D_{\mathrm{sys}}=d^{\,2+4N_k},
-$$
+```
 
-so direct density-matrix propagation becomes exponentially expensive with $N_k$.
+so direct density-matrix propagation becomes exponentially expensive with $`N_k`$.
 
 Useful a-priori truncation diagnostics are
 
-$$
+```math
 \epsilon_{\mathrm{SPDC}}(d)=\tanh^{2d}(g),
 \qquad
 \epsilon_{\mathrm{th}}(d)
@@ -177,12 +177,12 @@ $$
 \left(
 \frac{\bar n_{\mathrm{th}}}{1+\bar n_{\mathrm{th}}}
 \right)^d.
-$$
+```
 
 The manuscript uses explicit successive-cutoff tests rather than relying only on these tail estimates:
 
-- **State-level benchmark:** $d=2,\ldots,6$; $d=6$ is the first tested cutoff satisfying the adopted $10^{-2}$ full-grid theory-agreement and successive-cutoff criteria.
-- **Measurement-level benchmark:** $d=2,\ldots,6$; $d=4$ is numerically sufficient under the normalized $10^{-3}$ successive-cutoff criterion, with $d=5,6$ providing further stability checks.
+- **State-level benchmark:** $`d=2,\ldots,6`$; $`d=6`$ is the first tested cutoff satisfying the adopted $`10^{-2}`$ full-grid theory-agreement and successive-cutoff criteria.
+- **Measurement-level benchmark:** $`d=2,\ldots,6`$; $`d=4`$ is numerically sufficient under the normalized $`10^{-3}`$ successive-cutoff criterion, with $`d=5,6`$ providing further stability checks.
 
 ## Repository contents
 
@@ -239,11 +239,11 @@ Generated figures are written to `images/`, and numerical fields/contours are wr
 
 ## Reproducibility notes
 
-- The analytical $N_k>0$ purity/fidelity continuation follows exactly from the factorized independent-pair model; it is not a brute-force density-matrix extrapolation.
-- Ternary plots use a constrained simplex and continuously interpolate $N_k$ only for visualization.
-- The reduced polarization-count model is a weak-gain model. Its finite-$g$ phase maps should be interpreted as analytical extrapolations when used outside the weak-gain validation point.
-- Expected counts use a deterministic normalization $N_{\mathrm{meas}}$; no stochastic detector sampling is performed.
-- The final convergence cells are computationally expensive, especially at $d=5,6$.
+- The analytical $`N_k>0`$ purity/fidelity continuation follows exactly from the factorized independent-pair model; it is not a brute-force density-matrix extrapolation.
+- Ternary plots use a constrained simplex and continuously interpolate $`N_k`$ only for visualization.
+- The reduced polarization-count model is a weak-gain model. Its finite-$`g`$ phase maps should be interpreted as analytical extrapolations when used outside the weak-gain validation point.
+- Expected counts use a deterministic normalization $`N_{\mathrm{meas}}`$; no stochastic detector sampling is performed.
+- The final convergence cells are computationally expensive, especially at $`d=5,6`$.
 
 ## Citation
 
