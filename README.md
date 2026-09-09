@@ -2,9 +2,6 @@
 
 **Quantum digital twin and analytical benchmarks for multimode spontaneous parametric down-conversion (SPDC) in thermal-loss channels.**
 
-> **Suggested GitHub “About” description:**  
-> QuTiP-based quantum digital twin for multimode SPDC with thermal-loss channels, exact Gaussian purity/fidelity benchmarks, polarization-resolved counting and CHSH analysis, and finite-Fock convergence studies.
-
 ## Overview
 
 This repository contains the numerical and analytical calculations associated with **“Analytical Benchmarks for a Multimode SPDC Digital Twin”** by Alireza Alipour and Jonathan L. Habif. The implementation combines a finite-Fock density-matrix digital twin with cutoff-independent analytical benchmarks for noisy, lossy, polarization–spectral SPDC systems.
