@@ -190,12 +190,6 @@ QDT_SPDC/
 ├── main.py
 ├── matrixes_representation.py
 ├── requirements.txt
-├── references/
-│   ├── reference_main.bib
-│   └── reference_SI.bib
-└── manuscript/
-    ├── main.tex
-    └── SI.tex
 ```
 
 `QDT_SPDC_reproducible.ipynb` is self-contained: it includes the helper routines from `main.py` and `matrixes_representation.py` directly in the notebook, followed by the analytical and numerical figure-generation cells.
