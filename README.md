@@ -24,9 +24,9 @@ The discrete SPDC basis is
 
 $$
 (H,f_0),(V,f_0),
-\left\{
+\\left\{
 (H,f_k^+),(V,f_k^-),(H,f_k^-),(V,f_k^+)
-\right\}_{k=1}^{N_k}.
+\\right\}_{k=1}^{N_k}.
 $$
 
 The number of physical optical modes and independent conjugate SPDC pairs are
